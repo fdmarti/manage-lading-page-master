@@ -2,18 +2,42 @@
 import Logo from './shared/images/Logo.astro';
 import LinkAstro from './shared/Navbar/ListLinks.astro';
 import Button from './shared/Button.astro';
+
+import HamburgerIcon from './shared/images/HamburgerIcon.astro';
 ---
 
-<header class='max-w-[1440px] mx-auto'>
+<header class='max-w-[1440px] mx-auto px-10 xl:px-0'>
 	<nav class='flex justify-between items-center py-16 relative'>
 		<section>
 			<Logo />
 		</section>
-		<section>
+		<section class='hidden lg:block menu relative'>
 			<LinkAstro />
 		</section>
-		<section>
+		<section class='hidden lg:block'>
 			<Button />
+		</section>
+		<section class='lg:hidden block'>
+			<HamburgerIcon />
 		</section>
 	</nav>
 </header>
+
+<script>
+	const toggleMenuBtn = document.querySelector(
+		'.btn-toggle-menu',
+	) as HTMLImageElement;
+	const menu = document.querySelector('.menu');
+
+	toggleMenuBtn!.addEventListener('click', () => {
+		menu!.classList.toggle('!block');
+
+		if (menu!.classList.contains('!block')) {
+			toggleMenuBtn.src = '/images/icon-close.svg';
+			document.documentElement.style.overflow = 'hidden';
+		} else {
+			toggleMenuBtn.src = '/images/icon-hamburger.svg';
+			document.documentElement.style.overflow = 'auto';
+		}
+	});
+</script>

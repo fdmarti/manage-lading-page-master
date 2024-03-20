@@ -3,11 +3,11 @@ import UserCard from './UserCard.astro';
 import { userQuotes } from '../../data/user-quotes';
 ---
 
-<div class='flex space-x-16 mb-10 absolute top-0'>
-	<div class='flex space-x-16 animate-loop-scroll'>
+<div class="flex gap-9 max-w-full overflow-hidden">
+	<div class='flex flex-row gap-9 animate-loop-scroll'>
 		{userQuotes.map((quote) => <UserCard {...quote} />)}
 	</div>
-	<div class='flex space-x-16 animate-loop-scroll' aria-hidden='true'>
+	<div class='flex flex-row gap-9 animate-loop-scroll' aria-hidden='true'>
 		{userQuotes.map((quote) => <UserCard {...quote} />)}
 	</div>
 </div>

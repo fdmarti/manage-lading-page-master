@@ -12,11 +12,11 @@ export default {
 				'simplify-section': "url('/images/bg-simplify-section-desktop.svg')",
 			},
 			animation: {
-				'loop-scroll': 'loop-scroll 30s linear infinite',
+				'loop-scroll': 'loop-scroll 50s linear infinite',
 			},
 			keyframes: {
 				'loop-scroll': {
-					from: { transform: 'translateX(0)' },
+					from: { transform: 'translateX(0%)' },
 					to: { transform: 'translateX(-100%)' },
 				}
 			}
