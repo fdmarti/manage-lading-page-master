@@ -1,0 +1,25 @@
+---
+import Paragraph from './Paragraph.astro';
+
+interface Props {
+	imageUrl?: string;
+	user?: string;
+	text?: string;
+}
+
+const {
+	imageUrl = 'avatar-ali.webp',
+	user = 'Ali Bravo',
+	text = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni neque excepturi hic beatae fuga nisi a numquam necessitatibus mollitia quos delectus dolores at natus suscipit, iusto, error odio esse placeat.',
+} = Astro.props;
+---
+
+<div class='bg-gray-100 w-[600px] h-[200px] p-14 text-center relative rounded'>
+	<img
+		src=`/images/${imageUrl}`
+		alt='avatar image'
+		class='absolute w-20 -top-12 right-64'
+	/>
+	<h5 class='font-bold my-1'>{user}</h5>
+	<Paragraph text=`${text}` />
+</div>

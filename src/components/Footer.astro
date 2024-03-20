@@ -1,0 +1,35 @@
+---
+import LogoWhite from './shared/images/LogoWhite.astro';
+import SocialMedia from './shared/Footer/SocialMedia.astro';
+
+import Link from './shared/Link.astro';
+import Button from './shared/Button.astro';
+
+import { externalLinks } from '../data/external-links';
+---
+
+<footer class='bg-dark-blue relative'>
+	<div class='max-w-[1440px] mx-auto flex justify-between items-center p-20'>
+		<section class='flex flex-col h-[130px] justify-between'>
+			<LogoWhite />
+			<SocialMedia />
+		</section>
+		<section>
+			<ul class='grid grid-cols-2 gap-5 text-gray-300'>
+				{externalLinks.map((link) => <Link text={link.text} />)}
+			</ul>
+		</section>
+		<section class='flex flex-col gap-14'>
+			<form class='flex items-center justify-between gap-4'>
+				<input
+					type='email'
+					placeholder='Updates in your inbox...'
+					class='p-3 rounded-full outline-none text-sm w-full'
+					required
+				/>
+				<Button text='Go' />
+			</form>
+			<span class='text-gray-300'> Copyright 2020. All Rights Reserved</span>
+		</section>
+	</div>
+</footer>

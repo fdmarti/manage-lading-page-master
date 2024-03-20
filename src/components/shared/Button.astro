@@ -1,0 +1,15 @@
+---
+interface Props {
+	text?: string;
+	reverse?: boolean;
+}
+
+const { text = 'Get Started', reverse = false } = Astro.props;
+---
+
+<button
+	class:list={[
+		'bg-orange-500 text-white font-bold text-sm px-6 py-3 rounded-full shadow-md shadow-orange-400 hover:cursor-pointer hover:opacity-50',
+		{ '!text-orange-600 bg-white shadow-none': reverse },
+	]}>{text}</button
+>

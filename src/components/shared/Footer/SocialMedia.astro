@@ -1,0 +1,40 @@
+---
+const SocialLinks = [
+	{
+		name: 'facebook',
+		url: '/images/icon-facebook.svg',
+	},
+	{
+		name: 'youtube',
+		url: '/images/icon-youtube.svg',
+	},
+	{
+		name: 'twitter',
+		url: '/images/icon-twitter.svg',
+	},
+	{
+		name: 'pintarest',
+		url: '/images/icon-pinterest.svg',
+	},
+	{
+		name: 'instagram',
+		url: '/images/icon-instagram.svg',
+	},
+];
+---
+
+<div>
+	<ul class='flex justify-between gap-4'>
+		{
+			SocialLinks.map((link) => (
+				<li>
+					<img
+						src={link.url}
+						alt={`${link.name} icon`}
+						class='hover:opacity-65 hover:cursor-pointer w-6'
+					/>
+				</li>
+			))
+		}
+	</ul>
+</div>

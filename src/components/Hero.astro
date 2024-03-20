@@ -1,0 +1,21 @@
+---
+import Button from './shared/Button.astro';
+import Paragraph from './shared/Paragraph.astro';
+
+import Illustration from './shared/images/Illustration.astro';
+---
+
+<div class='flex justify-between items-center max-w-[1440px] mx-auto'>
+	<section class='max-w-[450px] flex flex-col gap-10 items-start'>
+		<h1 class='text-[52px] leading-none font-bold'>
+			Bring everyone together to build better products.
+		</h1>
+		<Paragraph
+			text='Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.'
+		/>
+		<Button />
+	</section>
+	<section>
+		<Illustration />
+	</section>
+</div>
